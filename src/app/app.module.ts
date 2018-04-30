@@ -4,14 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { SimpleComponentComponent } from './simple-component/simple-component.component';
 import { MailService } from './mail.service';
 import { PokemonService } from './services/pokemon/pokemon.service';
+import { TestyComponent } from './components/testy/testy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SimpleComponentComponent
+    TestyComponent
   ],
   imports: [
     BrowserModule,

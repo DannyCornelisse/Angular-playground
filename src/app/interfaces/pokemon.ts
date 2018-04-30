@@ -4,4 +4,5 @@ export interface Pokemon {
         front_default: string;
     };
     id: Number;
+    link?: String;
 }
