@@ -17,13 +17,9 @@ export class FirebaseComponent implements OnInit {
     }
 
     ngOnInit() {
-
         const endPoint = this.db.list('/');
-        endPoint.push({key: 'hello'});
-        console.log('bla: ', this.db.list('/').valueChanges());
         this.db.list('/').valueChanges().subscribe(res => {
             console.log(res);
-            debugger;
         });
     }
 }

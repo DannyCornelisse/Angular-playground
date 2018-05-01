@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 // Angular material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 // Firebase
 import { AngularFireModule } from 'angularfire2';
@@ -20,6 +21,7 @@ import { PokemonService } from './services/pokemon/pokemon.service';
 import { TestyComponent } from './components/testy/testy.component';
 import { FirebaseComponent } from './components/firebase/firebase.component';
 import { SharedService } from './services/shared.service';
+import { HeaderComponent } from './components/header/header.component';
 
 
 
@@ -27,7 +29,8 @@ import { SharedService } from './services/shared.service';
   declarations: [
     AppComponent,
     TestyComponent,
-    FirebaseComponent
+    FirebaseComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { SharedService } from './services/shared.service';
     HttpModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatToolbarModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule
