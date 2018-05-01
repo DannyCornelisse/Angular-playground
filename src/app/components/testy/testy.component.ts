@@ -4,11 +4,13 @@ import { PokemonService } from './../../services/pokemon/pokemon.service';
 import { Observable } from 'rxjs/Observable';
 import { timer } from 'rxjs/observable/timer';
 import { Pokemon } from './../../interfaces/pokemon';
+import { SharedService } from './../../services/shared.service';
 
 @Component({
     selector: 'app-testy',
     templateUrl: './testy.component.html',
-    styleUrls: ['./testy.component.scss']
+    styleUrls: ['./testy.component.scss'],
+    providers: [SharedService]
 })
 export class TestyComponent implements OnInit {
     value: any;
@@ -22,7 +24,8 @@ export class TestyComponent implements OnInit {
 
     constructor(
         public mail: MailService,
-        public pokemonService: PokemonService
+        public pokemonService: PokemonService,
+        public sharedService: SharedService
     ) {}
 
     ngOnInit() {

@@ -18,12 +18,16 @@ import { AppComponent } from './app.component';
 import { MailService } from './mail.service';
 import { PokemonService } from './services/pokemon/pokemon.service';
 import { TestyComponent } from './components/testy/testy.component';
+import { FirebaseComponent } from './components/firebase/firebase.component';
+import { SharedService } from './services/shared.service';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestyComponent
+    TestyComponent,
+    FirebaseComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,7 @@ import { TestyComponent } from './components/testy/testy.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [MailService, PokemonService],
+  providers: [MailService, PokemonService, SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
