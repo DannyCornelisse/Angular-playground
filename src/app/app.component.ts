@@ -6,11 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title: Array<String> = ['app works!'];
-  testy: String = 'blbalblablbala';
-  bla: String = '';
 
   constructor() {
-      this.bla = 'bla';
   }
 }

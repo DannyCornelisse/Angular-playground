@@ -5,8 +5,10 @@
 </p>
 <!-- <p *ngFor="let message of mail.messages">{{message}}</p> -->
 <div class="pokecontainer">
-    <a href="{{pokemon.link}}" target="blank" class="pokeball" *ngFor="let pokemon of myPokemon">
+    <a href="{{pokemon.link}}" target="blank" class="pokeball" *ngFor="let pokemon of myPokemon | sort:'id'">
         <img src="{{pokemon.sprites.front_default}}" alt="bla">
         <div>{{pokemon.name}}</div>
+        <div>{{pokemon.id}}</div>
     </a>
+    <span>{{myPokemon.length}}</span>
 </div>

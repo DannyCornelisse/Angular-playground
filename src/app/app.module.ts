@@ -1,7 +1,9 @@
+// Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
 
 // Angular material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,27 +18,38 @@ import { environment } from './../environments/environment'; // Needed for fireb
 
 // Own
 import { AppComponent } from './app.component';
-import { MailService } from './mail.service';
 import { PokemonService } from './services/pokemon/pokemon.service';
 import { TestyComponent } from './components/testy/testy.component';
 import { FirebaseComponent } from './components/firebase/firebase.component';
 import { SharedService } from './services/shared.service';
 import { HeaderComponent } from './components/header/header.component';
+import { SortPipe } from './pipes/sort.pipe';
 
-
+const appRoutes: Routes = [
+    {
+        path: 'testy',
+        component: TestyComponent
+    }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     TestyComponent,
     FirebaseComponent,
-    HeaderComponent
+    HeaderComponent,
+    SortPipe
   ],
   imports: [
+    RouterModule.forRoot(
+        appRoutes,
+        { enableTracing: false } // <-- debugging purposes only
+    ),
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
+    RouterModule,
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
@@ -44,7 +57,7 @@ import { HeaderComponent } from './components/header/header.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [MailService, PokemonService, SharedService],
+  providers: [PokemonService, SharedService, SortPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
