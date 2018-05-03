@@ -1,0 +1,6 @@
+<h2 class="standings-page-title">Standings</h2>
+
+<app-standings-table
+    *ngIf="teamStandings && teamStandings.length > 1"
+    [standings]="teamStandings">
+</app-standings-table>

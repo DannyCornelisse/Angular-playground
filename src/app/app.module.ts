@@ -7,8 +7,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 // Angular material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatTableModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 // Firebase
 import { AngularFireModule } from 'angularfire2';
@@ -24,11 +25,21 @@ import { FirebaseComponent } from './components/firebase/firebase.component';
 import { SharedService } from './services/shared.service';
 import { HeaderComponent } from './components/header/header.component';
 import { SortPipe } from './pipes/sort.pipe';
+import { StandingsTableComponent } from './components/standings-table/standings-table.component';
+import { StandingsPageComponent } from './components/standings-page/standings-page.component';
 
 const appRoutes: Routes = [
     {
         path: 'testy',
         component: TestyComponent
+    },
+    {
+        path: 'standings',
+        component: StandingsPageComponent
+    },
+    {
+        path: '',
+        component: FirebaseComponent
     }
 ];
 
@@ -38,7 +49,9 @@ const appRoutes: Routes = [
     TestyComponent,
     FirebaseComponent,
     HeaderComponent,
-    SortPipe
+    SortPipe,
+    StandingsTableComponent,
+    StandingsPageComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -53,6 +66,8 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
+    MatTableModule,
+    MatFormFieldModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule

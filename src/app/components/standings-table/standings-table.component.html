@@ -1,0 +1,55 @@
+<div class="standings-table-container">
+    <mat-table class="standings-table mat-elevation-z8" #table [dataSource]="standings">
+
+        <!-- teamName Column -->
+        <ng-container matColumnDef="teamName">
+            <mat-header-cell *matHeaderCellDef> Team Name </mat-header-cell>
+            <mat-cell *matCellDef="let teamStanding"> {{teamStanding.teamName}} </mat-cell>
+        </ng-container>
+
+        <!-- gamesPlayed Column -->
+        <ng-container matColumnDef="gamesPlayed">
+            <mat-header-cell *matHeaderCellDef> Games Played </mat-header-cell>
+            <mat-cell *matCellDef="let teamStanding"> {{teamStanding.gamesPlayed}} </mat-cell>
+        </ng-container>
+
+        <!-- gamesWon Column -->
+        <ng-container matColumnDef="gamesWon">
+            <mat-header-cell *matHeaderCellDef> Games Won </mat-header-cell>
+            <mat-cell *matCellDef="let teamStanding"> {{teamStanding.gamesWon}} </mat-cell>
+        </ng-container>
+
+        <!-- gamesDrawn Column -->
+        <ng-container matColumnDef="gamesDrawn">
+            <mat-header-cell *matHeaderCellDef> Games Drawn </mat-header-cell>
+            <mat-cell *matCellDef="let teamStanding"> {{teamStanding.gamesDrawn}} </mat-cell>
+        </ng-container>
+
+        <!-- gamesLost Column -->
+        <ng-container matColumnDef="gamesLost">
+            <mat-header-cell *matHeaderCellDef> Games Lost </mat-header-cell>
+            <mat-cell *matCellDef="let teamStanding"> {{teamStanding.gamesLost}} </mat-cell>
+        </ng-container>
+
+        <!-- points Column -->
+        <ng-container matColumnDef="points">
+            <mat-header-cell *matHeaderCellDef> Points </mat-header-cell>
+            <mat-cell *matCellDef="let teamStanding"> {{teamStanding.points}} </mat-cell>
+        </ng-container>
+
+        <!-- goalsFor Column -->
+        <ng-container matColumnDef="goalsFor">
+            <mat-header-cell *matHeaderCellDef> Goals For </mat-header-cell>
+            <mat-cell *matCellDef="let teamStanding"> {{teamStanding.goalsFor}} </mat-cell>
+        </ng-container>
+
+        <!-- goalsAgainst Column -->
+        <ng-container matColumnDef="goalsAgainst">
+            <mat-header-cell *matHeaderCellDef> Goals Against </mat-header-cell>
+            <mat-cell *matCellDef="let teamStanding"> {{teamStanding.goalsAgainst}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
