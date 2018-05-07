@@ -27,6 +27,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { SortPipe } from './pipes/sort.pipe';
 import { StandingsTableComponent } from './components/standings-table/standings-table.component';
 import { StandingsPageComponent } from './components/standings-page/standings-page.component';
+import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
+import { CreateTournamentComponent } from './components/create-tournament/create-tournament.component';
 
 const appRoutes: Routes = [
     {
@@ -39,7 +41,11 @@ const appRoutes: Routes = [
     },
     {
         path: '',
-        component: FirebaseComponent
+        component: WelcomePageComponent
+    },
+    {
+        path: 'create-tournament',
+        component: CreateTournamentComponent
     }
 ];
 
@@ -51,7 +57,9 @@ const appRoutes: Routes = [
     HeaderComponent,
     SortPipe,
     StandingsTableComponent,
-    StandingsPageComponent
+    StandingsPageComponent,
+    WelcomePageComponent,
+    CreateTournamentComponent
   ],
   imports: [
     RouterModule.forRoot(

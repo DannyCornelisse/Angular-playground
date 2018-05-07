@@ -32,3 +32,4 @@ export class StandingsPageComponent implements OnInit {
             .subscribe((res: Object) => this.getTeamsStandings(res));
     }
 }
+
